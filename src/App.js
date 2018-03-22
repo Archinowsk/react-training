@@ -1,4 +1,8 @@
 import React, { Component } from 'react'
+import Intro from './Components/Intro'
+import Sctructure from './Components/Sctructure'
+import Start from './Components/Start'
+import State from './Components/State'
 import logo from './assets/logo.svg'
 import './styles/App.css'
 
@@ -10,14 +14,14 @@ class App extends Component {
   render() {
     const { page } = this.state
 
-    const selector = (
+    const Selector = (
       <div>
         <button
           onClick={() => {
             this.setState({ page: 'start' })
           }}
         >
-          App
+          Start
         </button>
         <button
           onClick={() => {
@@ -49,42 +53,16 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        {selector}
-        {page === 'start' && (
-          <div className="start">
-            <p className="App-intro">Welcome to React Training</p>
-          </div>
-        )}
 
-        {page === 'intro' && (
-          <div>
-            <p>ES5 (ECMAScript)</p>
-            <p>ES6 (const, let, =>)</p>
-            <p>ESNext (Stage 1, 2, 3 -> ESn)</p>
-            <p>Babel</p>
-            <p>Webpack</p>
-            <p>Nodejs (runtime environment, ~framework), NPM, YARN</p>
-            <p>React (user interface library)</p>
-            <p>React Virtual DOM</p>
-            <p>React JS vs JSX</p>
-            <p>Rendering Components</p>
-            <p>Props</p>
-          </div>
-        )}
+        {Selector}
 
-        {page === 'state' && (
-          <div>
-            <p>Component State</p>
-            <p>Redux</p>
-          </div>
-        )}
+        {page === 'start' && <Start />}
 
-        {page === 'structure' && (
-          <div>
-            <p>Project structure</p>
-            <p>Folder structure</p>
-          </div>
-        )}
+        {page === 'intro' && <Intro />}
+
+        {page === 'state' && <State />}
+
+        {page === 'structure' && <Sctructure />}
       </div>
     )
   }
