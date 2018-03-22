@@ -11,7 +11,7 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "precommit": "lint-staged",
-    "prettier": "prettier --write \"src/**/*.{js,json,scss}\"",
+    "prettier": "prettier --write \"src/**/*.{js,json,css}\"",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom"
   },
@@ -25,7 +25,7 @@
       "prettier --write",
       "git add"
     ],
-    "src/**/*.{css,scss}": [
+    "src/**/*.css": [
       "prettier --write",
       "git add"
     ],
