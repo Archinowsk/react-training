@@ -3,6 +3,7 @@ import Intro from './Components/Intro'
 import Sctructure from './Components/Sctructure'
 import Start from './Components/Start'
 import State from './Components/State'
+import Redux from './Components/Redux'
 import logo from './assets/logo.svg'
 import './styles/App.css'
 
@@ -39,6 +40,13 @@ class App extends Component {
         </button>
         <button
           onClick={() => {
+            this.setState({ page: 'redux' })
+          }}
+        >
+          Redux
+        </button>
+        <button
+          onClick={() => {
             this.setState({ page: 'structure' })
           }}
         >
@@ -61,6 +69,8 @@ class App extends Component {
         {page === 'intro' && <Intro />}
 
         {page === 'state' && <State />}
+
+        {page === 'redux' && <Redux />}
 
         {page === 'structure' && <Sctructure />}
       </div>

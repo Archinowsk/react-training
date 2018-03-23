@@ -25,6 +25,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 - Component State
 - State management: Redux, MobX
-- Redux
-- Application/folder structure
-- Container vs dumb components
+- Redux: Immutable, functional
+- MobX: Mutable, object-oriented, reactive
+
+### Redux
+
+- `npm install redux redux-react`
+- Redux Actions
+- Redux Dispatchers
+- Container component (View component)
+- Presentational Component (Dumb component)
+
+### Application structure
+
+- Folder structure
+- File grouping
