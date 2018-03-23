@@ -11,6 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * To get started: `npx create-react-app`
 * ECMAScript
+  * Specification to standardize JavaScript
   * ES5
   * ES6 (const, let, =>)
   * ESNext (Stage 1, 2, 3 -> ESn)
