@@ -34,7 +34,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * `npm install redux redux-react`
 * Redux Actions
 * Redux Dispatchers
-* Container component (View component)
+* Container component (Smart Component, View component)
 * Presentational Component (Dumb component)
 
 ### Application structure
