@@ -1,28 +1,23 @@
 import React from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import Counter from '../examples/redux/Counter'
+import CounterView from '../examples/redux/Counter/CounterView'
+import CounterReducer from '../examples/redux/Counter/CounterReducer'
 
 const Redux = () => {
-  // Reducer
-  function counter(state = { count: 0 }, action) {
-    const count = state.count
-    switch (action.type) {
-      case 'increase':
-        return { count: count + 1 }
-      default:
-        return state
-    }
-  }
-
   // Store
-  const store = createStore(counter)
+  const store = createStore(
+    CounterReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+
   return (
     <div className="Redux">
       <p>Redux</p>
 
+      {/* <Provider> makes the Redux store available to the connect() calls in the component hierarchy below */}
       <Provider store={store}>
-        <Counter />
+        <CounterView />
       </Provider>
     </div>
   )

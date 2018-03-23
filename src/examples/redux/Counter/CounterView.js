@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { increaseAction, decreaseAction } from './CounterActions'
 
 // React component
 
@@ -9,7 +10,8 @@ class Counter extends React.Component {
     const { value, onIncreaseClick } = this.props
     return (
       <div>
-        <span>{value}</span>
+        <p>Counter value: {value}</p>
+        <button onClick={onDecreaseClick}>Increase</button>
         <button onClick={onIncreaseClick}>Increase</button>
       </div>
     )
@@ -18,31 +20,33 @@ class Counter extends React.Component {
 */
 
 const Counter = props => {
-  const { value, onIncreaseClick } = props
+  const { value, onIncreaseClick, onDecreaseClick } = props
   return (
     <div>
       <p>Counter value: {value}</p>
+      <button onClick={onDecreaseClick}>Increase</button>
       <button onClick={onIncreaseClick}>Increase</button>
     </div>
   )
 }
 
-// Redux Action
-const increaseAction = { type: 'increase' }
-
 // Map Redux state to component props
+// Subscribe React Component to Redux store updates
+// When Redux Store is updated mapStateToProps() will be called
 const mapStateToProps = state => {
   return {
     value: state.count,
   }
 }
 
-// Map Redux actions to component props
+// Map Redux Actions to Component props
 const mapDispatchToProps = dispatch => {
   return {
     onIncreaseClick: () => dispatch(increaseAction),
+    onDecreaseClick: () => dispatch(decreaseAction),
   }
 }
 
-// Connected Component
+// connect() wires Redux to React Component
+// connect() is Higher Order Component (HOC)
 export default connect(mapStateToProps, mapDispatchToProps)(Counter)

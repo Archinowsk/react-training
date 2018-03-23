@@ -6,16 +6,22 @@ class ReactState extends React.Component {
     name: '',
   }
 
-  updateCounter = () => {
+  increaseCounter = () => {
     let { counter } = this.state
     this.setState({ counter: counter + 1 })
+  }
+
+  decreaseCounter = () => {
+    let { counter } = this.state
+    this.setState({ counter: counter - 1 })
   }
 
   render() {
     return (
       <div>
         <p>Counter value: {this.state.counter}</p>
-        <button onClick={this.updateCounter}>Increase</button>
+        <button onClick={this.decreaseCounter}>Decrease</button>
+        <button onClick={this.increaseCounter}>Increase</button>
       </div>
     )
   }
