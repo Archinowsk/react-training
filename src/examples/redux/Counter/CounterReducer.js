@@ -2,12 +2,11 @@
 const initialState = { count: 0, name: '' }
 
 const counterReducer = (state = initialState, action) => {
-  const count = state.count
   switch (action.type) {
     case 'increase':
-      return { count: count + 1 }
+      return { ...state, count: action.payload }
     case 'decrease':
-      return { count: count - 1 }
+      return { ...state, count: action.payload }
     case 'updateName':
       return { ...state, name: action.payload }
     default:

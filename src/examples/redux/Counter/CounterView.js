@@ -30,12 +30,12 @@ const Counter = props => {
     <div>
       <p>Counter value: {value}</p>
 
-      <button onClick={onDecreaseClick}>Increase</button>
-      <button onClick={onIncreaseClick}>Increase</button>
+      <button onClick={() => onDecreaseClick(value - 1)}>Decrease</button>
+      <button onClick={() => onIncreaseClick(value + 1)}>Increase</button>
 
       <p>Name: {name}</p>
 
-      <input type="text" value={name} onChange={onUpdateName} />
+      <input type="text" value={name} onChange={event => onUpdateName(event)} />
     </div>
   )
 }
@@ -53,8 +53,8 @@ const mapStateToProps = state => {
 // Map Redux Actions to Component props
 const mapDispatchToProps = dispatch => {
   return {
-    onIncreaseClick: () => dispatch(increaseAction),
-    onDecreaseClick: () => dispatch(decreaseAction),
+    onIncreaseClick: value => dispatch(increaseAction(value)),
+    onDecreaseClick: value => dispatch(decreaseAction(value)),
     onUpdateName: event => dispatch(updateNameAction(event.target.value)),
   }
 }

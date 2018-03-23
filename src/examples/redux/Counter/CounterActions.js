@@ -1,6 +1,11 @@
 // Redux Actions
-export const increaseAction = { type: 'increase' }
-export const decreaseAction = { type: 'decrease' }
+export const increaseAction = value => {
+  return { type: 'increase', payload: value }
+}
+
+export const decreaseAction = value => {
+  return { type: 'decrease', payload: value }
+}
 
 export const updateNameAction = name => {
   return {
