@@ -49,7 +49,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 * Container component (Smart component, View component)
   * "How things work"
-  * Writter as ES6 Classes
+  * Usually writter as ES6 Classes
   * Stateful (`this.state`)
   * Connected to State Management (Redux, MobX)
   * Provide data and behavior to Presentational component
